@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"github/rotatebot/config"
 	"os/user"
 	"strings"
 )
@@ -30,6 +31,16 @@ const (
 	UserIDType MemberType = "user_id"
 )
 
+var campName string
+
+func InitCampName(camp string) {
+	campName = camp
+}
+
+func GetBotCampConf() *config.BotConf {
+	return config.GetGlobalConf().BotSvrConfig[campName]
+}
+
 func GetWhiteOpenIDs() []string {
 	if IsTestEnv() {
 		return testWhiteOpenIDs
@@ -44,9 +55,12 @@ func Get1V1MentorIDs() []string {
 			"ou_9d30ad8e58e9137696bf502825d50518", //小林哥
 			"ou_1b73b5f130001a43c22387149a71dcc4", //鹏哥
 			"ou_20c871c0783883ced66213f17ed0cd64", // 小鱼
+			"ou_a54b496fc6bdd3c473c0b0a56131baa0", // 诸葛青
+			"ou_7fc9aaa5f4c537d1a1b4be5452ec884f", // 飞哥
+			"ou_51b1387a9ffe74e66ad95c26e780db9e", // 清风
 		}
 	}
-	return whiteOpenIDs
+	return GetBotCampConf().WhiteList
 }
 
 func GetWorkshopPrepareChatMentors() []string {

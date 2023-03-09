@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github/rotatebot/app"
@@ -12,12 +13,32 @@ import (
 	"github/rotatebot/view"
 	"os"
 	"os/signal"
+	"strconv"
 	"syscall"
 )
 
+var campName string
+
+func init() {
+	flag.StringVar(&campName, "camp_name", "bot_camp", "camp name")
+}
+
+func Init() error {
+	utils.InitCampName(campName)
+	config.InitConfig()
+	if _, ok := config.GetGlobalConf().BotSvrConfig[campName]; !ok {
+		log.Errorf("camp_name:%s not exists", campName)
+		return fmt.Errorf("camp_name:%s not exists", campName)
+	}
+	return nil
+}
+
 //go:build=
 func main() {
-	config.InitConfig()
+	flag.Parse()
+	if err := Init(); err != nil {
+		return
+	}
 	log.SetReportCaller(true)
 	log.Infof("Is Test Env:%t", utils.IsTestEnv())
 	ctx, cancel := context.WithCancel(context.Background())
@@ -33,7 +54,8 @@ func main() {
 	dao.InitDB()
 	app.RegisterTask(ctx)
 	r := view.RouterInit()
-	if err := r.Run(":8080"); err != nil {
+	botConfig := utils.GetBotCampConf()
+	if err := r.Run(":" + strconv.Itoa(botConfig.Port)); err != nil {
 		panic(err)
 	}
 }
