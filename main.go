@@ -3,8 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github/rotatebot/app"
+	"github/rotatebot/config"
 	"github/rotatebot/dao"
 	"github/rotatebot/infra"
 	"github/rotatebot/utils"
@@ -16,8 +17,9 @@ import (
 
 //go:build=
 func main() {
-	logrus.SetReportCaller(true)
-	logrus.Infof("Is Test Env:%t", utils.IsTestEnv())
+	config.InitConfig()
+	log.SetReportCaller(true)
+	log.Infof("Is Test Env:%t", utils.IsTestEnv())
 	ctx, cancel := context.WithCancel(context.Background())
 	infra.StartCronjob()
 	c := make(chan os.Signal, 2)
