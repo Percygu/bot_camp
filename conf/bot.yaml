@@ -10,6 +10,8 @@ log_conf:
 bot_svr_conf:
   bot_camp1:
     port: 8000
+    app_id: "cli_a31ac04fbef8900b"
+    app_secret: "83BUHQBSPLm136PftJXhcBBrPUGyqv1I"
     white_list:
       - "ou_6e75a4323ad0eef42ae349d71203969e" # 狼哥
       - "ou_bcd4e27aad8d4cda70bb0d0b091e487c" # 虎哥
@@ -18,6 +20,8 @@ bot_svr_conf:
       - "ou_17a627f5ea7d28585af59f1649141e8e" # 小林哥
   bot_camp2:
     port: 8080
+    app_id: "cli_a4880a71a638d00e"
+    app_secret: "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX"
     white_list:
       - "ou_88d59ec35b63b8c9212702b0804886c0" # 牛哥
       - "ou_1b73b5f130001a43c22387149a71dcc4" # 鹏哥
