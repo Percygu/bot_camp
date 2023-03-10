@@ -19,7 +19,7 @@ bot_svr_conf:
       - "ou_844198543d625613bb5f9a5e4f2366c2" # 鹏哥
       - "ou_17a627f5ea7d28585af59f1649141e8e" # 小林哥
   bot_camp2:
-    port: 8080
+    port: 8082
     app_id: "cli_a4880a71a638d00e"
     app_secret: "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX"
     white_list:
