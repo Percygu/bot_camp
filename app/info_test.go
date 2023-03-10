@@ -57,6 +57,37 @@ func TestPick(t *testing.T) {
 
 func TestCreateGroup(t *testing.T) {
 	//larkinfra.CreateGroup(context.Background(), "ou_844198543d625613bb5f9a5e4f2366c2", "测试")
+	userName := "鹏哥"
+	memberIDs := []string{
+		"ou_88d59ec35b63b8c9212702b0804886c0", //牛哥
+		"ou_9d30ad8e58e9137696bf502825d50518", //小林哥
+		"ou_1b73b5f130001a43c22387149a71dcc4", //鹏哥
+		"ou_20c871c0783883ced66213f17ed0cd64", // 小鱼
+		"ou_a54b496fc6bdd3c473c0b0a56131baa0", // 诸葛青
+		//"ou_7fc9aaa5f4c537d1a1b4be5452ec884f", // 飞哥
+		//"ou_51b1387a9ffe74e66ad95c26e780db9e", // 清风
+	}
+	req := larkim.NewCreateChatReqBuilder().
+		UserIdType(`open_id`).
+		SetBotManager(true).
+		Body(larkim.NewCreateChatReqBodyBuilder().
+			Name(fmt.Sprintf("%s 1v1", userName)).
+			Description(fmt.Sprintf("%s的专属群", userName)).
+			UserIdList(memberIDs).
+			ChatMode(`group`).
+			OwnerId(utils.PengGe).
+			ChatType(`private`).
+			External(false).
+			JoinMessageVisibility(`all_members`).
+			LeaveMessageVisibility(`all_members`).
+			MembershipApproval(`no_approval_required`).
+			Build()).
+		Build()
+	resp, err := larkinfra.CreateGroup(context.Background(), req)
+	if err != nil {
+		logrus.Errorf("create group:%+v", err)
+	}
+	t.Logf("resp === %v", resp)
 }
 
 func TestUpdateVis(t *testing.T) {

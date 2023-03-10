@@ -20,7 +20,7 @@ import (
 var campName string
 
 func init() {
-	flag.StringVar(&campName, "camp_name", "bot_camp", "camp name")
+	flag.StringVar(&campName, "camp_name", "bot_camp2", "camp name")
 }
 
 func Init() error {

@@ -4,7 +4,6 @@ import (
 	rlog "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/spf13/viper"
 	"os"
-	"path"
 	"sync"
 	"time"
 
@@ -19,17 +18,13 @@ var (
 
 // GlobalConfig 业务配置结构体
 type GlobalConfig struct {
-	LogConfig    *LogConfig          `yaml:"self_log_conf" mapstructure:"self_log_conf"` // 本地日志配置
-	BotSvrConfig map[string]*BotConf `yaml:"bot_svr_conf" mapstructure:"bot_svr_conf"`   // 写日志服务配置
+	LogConfig    *LogConfig          `yaml:"log_conf" mapstructure:"log_conf"`         // 本地日志配置
+	BotSvrConfig map[string]*BotConf `yaml:"bot_svr_conf" mapstructure:"bot_svr_conf"` // 写日志服务配置
 }
 
 type BotConf struct {
 	Port      int      `yaml:"port" mapstructure:"port"`
 	WhiteList []string `yaml:"white_list" mapstructure:"white_list"`
-}
-
-func InitConfigFilePath(filePath string) {
-	configFile = filePath
 }
 
 // GetGlobalConf 获取全局配置文件
@@ -39,13 +34,8 @@ func GetGlobalConf() *GlobalConfig {
 }
 
 func readConf() {
-	viper.SetConfigName("logsvr")
+	viper.SetConfigName("bot")
 	viper.SetConfigType("yaml")
-	fileNameAll := path.Base(configFile)
-	log.Debugf("fileNameAll ==== %s\n", fileNameAll)
-	filePrefix := configFile[0 : len(configFile)-len(fileNameAll)]
-	log.Debugf("filePrefix ==== %s\n", filePrefix)
-	viper.AddConfigPath(filePrefix)
 	viper.AddConfigPath("./conf")
 	err := viper.ReadInConfig()
 	if err != nil {
@@ -74,7 +64,6 @@ func InitConfig() {
 		}})
 	log.SetReportCaller(true) // 打印文件位置，行号
 	log.SetLevel(level)
-
 	switch globalConf.LogConfig.LogPattern {
 	case "stdout":
 		log.SetOutput(os.Stdout)

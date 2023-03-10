@@ -98,7 +98,8 @@ const (
 	produceChatID     = "oc_3cb3aa4021eee68165c78e731476d3c1" // 导师团
 	testTopicChatID   = "oc_c6f4a213c3f2b35bba6e17868af7c072" // 目标话题测试
 	topicChatID       = "oc_9ab398ed766e74cc68706c1919b48471" // 系统设计workshop
-	mainGroupChatID   = "oc_55c292dc1b798b0d7289c29ddc89d6cc" // 训练营大群
+	// mainGroupChatID   = "oc_55c292dc1b798b0d7289c29ddc89d6cc" // 狂飙训练营
+	mainGroupChatID = "oc_2d9be16a28271de445d5d80a9b5e60b8" // 狂飙训练营2
 )
 
 // GetRemindChatWhiteIDs 发言提醒白名单

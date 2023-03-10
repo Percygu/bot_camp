@@ -6,6 +6,8 @@ import (
 	"github/rotatebot/infra/larkinfra"
 	"github/rotatebot/proto"
 	"github/rotatebot/utils"
+	//"log"
+	log "github.com/sirupsen/logrus"
 
 	larkim "github.com/larksuite/oapi-sdk-go/v3/service/im/v1"
 	larkwiki "github.com/larksuite/oapi-sdk-go/v3/service/wiki/v2"
@@ -40,6 +42,7 @@ func (j *JoinGroupHandler) Handle(ctx context.Context, msg *larkim.P2ChatMemberU
 	j.ctx = ctx
 	j.msg = msg
 	logrus.Infof("listen to msg chat name=%s", *msg.Name)
+	log.Debugf("chatId ====== %s", *j.msg.ChatId)
 	if *j.msg.ChatId != utils.GetJoinMainGroupChatID() {
 		return nil
 	}

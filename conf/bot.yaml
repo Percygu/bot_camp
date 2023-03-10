@@ -4,7 +4,7 @@ log_conf:
   log_path: ./botsvr.log # 日志路径
   #log_path: ./log/logsvr/logsvr.log # 日志路径
   save_days: 25 # 保存天数
-  level: info # panic,fatal,error,warn,info,debug,trace
+  level: debug # panic,fatal,error,warn,info,debug,trace
   pid_path: ./logsvr.pid
 
 bot_svr_conf:
