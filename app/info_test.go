@@ -52,7 +52,8 @@ func TestListChatID1(t *testing.T) {
 }
 
 func TestListOpenIDs(t *testing.T) {
-	for _, m := range larkinfra.FetchAllGroupMembers(context.Background(), "oc_b0ef9fad3ee6828ecfebd4c8f0cfa249", utils.OpenIDType) {
+	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+	for _, m := range larkinfra.FetchAllGroupMembers(context.Background(), "oc_a054cf305b885f62b3fb76ba3fecbef0", utils.OpenIDType) {
 		fmt.Println(larkcore.Prettify(m))
 	}
 }

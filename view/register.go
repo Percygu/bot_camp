@@ -20,9 +20,9 @@ func RouterInit() *gin.Engine {
 }
 
 func registerGroupOfficial(r *gin.Engine) {
-	handler := dispatcher.NewEventDispatcher(utils.BotVerifyToken, utils.BotEncryptedKey)
+	handler := dispatcher.NewEventDispatcher(utils.GetBotCampConf().BotVerifyToken, utils.GetBotCampConf().BotEncryptedKey)
 	handler.OnP2ChatMemberUserAddedV1(func(ctx context.Context, event *larkim.P2ChatMemberUserAddedV1) error {
 		return app.NewJoinGroupHandler().Handle(ctx, event.Event)
 	})
-	r.POST("/webhook/bot2/event", sdkginext.NewEventHandlerFunc(handler))
+	r.POST(utils.GetBotCampConf().EventUrl, sdkginext.NewEventHandlerFunc(handler))
 }

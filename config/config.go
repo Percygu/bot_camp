@@ -23,11 +23,14 @@ type GlobalConfig struct {
 }
 
 type BotConf struct {
-	Port      int      `yaml:"port" mapstructure:"port"`
-	AppID     string   `yaml:"app_id" mapstructure:"app_id"`
-	AppSecret string   `yaml:"app_secret" mapstructure:"app_secret"`
-	WhiteList []string `yaml:"white_list" mapstructure:"white_list"`
-	ChatIDList []string `yaml:"chat_id_list" mapstructure:"chat_id_list"`
+	Port            int      `yaml:"port" mapstructure:"port"`
+	AppID           string   `yaml:"app_id" mapstructure:"app_id"`
+	AppSecret       string   `yaml:"app_secret" mapstructure:"app_secret"`
+	WhiteList       []string `yaml:"white_list" mapstructure:"white_list"`
+	ChatIDList      []string `yaml:"chat_id_list" mapstructure:"chat_id_list"`
+	BotEncryptedKey string   `yaml:"bot_encrypted_key" mapstructure:"bot_encrypted_key"`
+	BotVerifyToken  string   `yaml:"bot_verify_token" mapstructure:"bot_verify_token"`
+	EventUrl        string   `yaml:"event_url" mapstructure:"event_url"`
 }
 
 // GetGlobalConf 获取全局配置文件
