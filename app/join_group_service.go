@@ -43,7 +43,7 @@ func (j *JoinGroupHandler) Handle(ctx context.Context, msg *larkim.P2ChatMemberU
 	j.msg = msg
 	logrus.Infof("listen to msg chat name=%s", *msg.Name)
 	log.Debugf("chatId ====== %s", *j.msg.ChatId)
-	if *j.msg.ChatId != utils.GetJoinMainGroupChatID() {
+	if !utils.Contains(utils.GetBotCampConf().ChatIDList,*j.msg.ChatId) {
 		return nil
 	}
 	utils.ExecAndCountFuncCtx(

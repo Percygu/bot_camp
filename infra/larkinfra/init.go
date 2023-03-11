@@ -15,8 +15,14 @@ const (
 
 var Client *lark.Client
 
-func init() {
-	Client = lark.NewClient(appid, appsecret, lark.WithLogReqAtDebug(true),
+func InitClient(appID,appSecret string){
+	Client = lark.NewClient(appID, appSecret, lark.WithLogReqAtDebug(true),
 		lark.WithEnableTokenCache(true))
 	rand.Seed(time.Now().Unix())
 }
+
+//func init() {
+//	Client = lark.NewClient(appid, appsecret, lark.WithLogReqAtDebug(true),
+//		lark.WithEnableTokenCache(true))
+//	rand.Seed(time.Now().Unix())
+//}

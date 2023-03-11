@@ -24,7 +24,10 @@ type GlobalConfig struct {
 
 type BotConf struct {
 	Port      int      `yaml:"port" mapstructure:"port"`
+	AppID     string   `yaml:"app_id" mapstructure:"app_id"`
+	AppSecret string   `yaml:"app_secret" mapstructure:"app_secret"`
 	WhiteList []string `yaml:"white_list" mapstructure:"white_list"`
+	ChatIDList []string `yaml:"chat_id_list" mapstructure:"chat_id_list"`
 }
 
 // GetGlobalConf 获取全局配置文件

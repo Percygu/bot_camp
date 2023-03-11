@@ -32,6 +32,25 @@ func TestListChatID(t *testing.T) {
 	log.Printf("%s\n", larkcore.Prettify(ans))
 }
 
+// TestListChatID 列出机器人在的聊天群
+func TestListChatID1(t *testing.T) {
+
+	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+
+	ctx := context.Background()
+	req := larkim.NewListChatReqBuilder().UserIdType("open_id").PageSize(100).Build()
+
+	ans, err := larkinfra.Client.Im.Chat.List(ctx, req)
+	if err != nil {
+		panic(err)
+	}
+	if !ans.Success() {
+		fmt.Println(ans.Code, ans.Msg, ans.RequestId())
+		panic(ans.Msg)
+	}
+	log.Printf("%s\n", larkcore.Prettify(ans))
+}
+
 func TestListOpenIDs(t *testing.T) {
 	for _, m := range larkinfra.FetchAllGroupMembers(context.Background(), "oc_b0ef9fad3ee6828ecfebd4c8f0cfa249", utils.OpenIDType) {
 		fmt.Println(larkcore.Prettify(m))

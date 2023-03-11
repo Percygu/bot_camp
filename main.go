@@ -9,6 +9,7 @@ import (
 	"github/rotatebot/config"
 	"github/rotatebot/dao"
 	"github/rotatebot/infra"
+	"github/rotatebot/infra/larkinfra"
 	"github/rotatebot/utils"
 	"github/rotatebot/view"
 	"os"
@@ -30,6 +31,8 @@ func Init() error {
 		log.Errorf("camp_name:%s not exists", campName)
 		return fmt.Errorf("camp_name:%s not exists", campName)
 	}
+	botConfig := utils.GetBotCampConf()
+	larkinfra.InitClient(botConfig.AppID, botConfig.AppSecret)
 	return nil
 }
 
