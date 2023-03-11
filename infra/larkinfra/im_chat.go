@@ -22,7 +22,7 @@ func CreateGroup(ctx context.Context, req *larkim.CreateChatReq) (*larkim.Create
 
 	// 服务端错误处理
 	if !resp.Success() {
-		logrus.Error(resp.Code, resp.Msg, resp.RequestId())
+		logrus.Errorf("resp.Code===%d, resp.Msg====%s, resp.RequestId()===%s",)
 		return nil, err
 	}
 

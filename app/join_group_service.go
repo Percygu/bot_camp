@@ -76,7 +76,7 @@ func (j *JoinGroupHandler) buildNewGroup() error {
 	logrus.Infof("Build Group")
 	for _, user := range j.msg.Users {
 		// 创建1v1群
-		memberIDs := utils.Get1V1MentorIDs()
+		memberIDs := utils.GetBotCampConf().WhiteList
 		memberIDs = append(memberIDs, *user.UserId.OpenId)
 		// 创建请求对象
 		req := larkim.NewCreateChatReqBuilder().

@@ -76,16 +76,17 @@ func TestPick(t *testing.T) {
 }
 
 func TestCreateGroup(t *testing.T) {
+	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
 	//larkinfra.CreateGroup(context.Background(), "ou_844198543d625613bb5f9a5e4f2366c2", "测试")
 	userName := "鹏哥"
 	memberIDs := []string{
-		"ou_88d59ec35b63b8c9212702b0804886c0", //牛哥
-		"ou_9d30ad8e58e9137696bf502825d50518", //小林哥
-		"ou_1b73b5f130001a43c22387149a71dcc4", //鹏哥
-		"ou_20c871c0783883ced66213f17ed0cd64", // 小鱼
-		"ou_a54b496fc6bdd3c473c0b0a56131baa0", // 诸葛青
-		//"ou_7fc9aaa5f4c537d1a1b4be5452ec884f", // 飞哥
-		//"ou_51b1387a9ffe74e66ad95c26e780db9e", // 清风
+		"ou_0f065b034d6ea3a4158f389a4fae3b1e",
+		"ou_697abf63fa74f346b67f68f93b2bc81b",
+		"ou_eb016ce9f4bccdc5bb02413912ce6ff3",
+		"ou_89455588b44f5210f698b36b7c7b6141",
+		"ou_6a11169c46840d664140c8d697e552d2",
+		"ou_af5d943271517308c3c5d0f7f688276f",
+		"ou_acc578572eed6500f8f30dd6da2a6d88",
 	}
 	req := larkim.NewCreateChatReqBuilder().
 		UserIdType(`open_id`).
