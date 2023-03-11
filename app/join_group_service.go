@@ -43,7 +43,7 @@ func (j *JoinGroupHandler) Handle(ctx context.Context, msg *larkim.P2ChatMemberU
 	j.msg = msg
 	logrus.Infof("listen to msg chat name=%s", *msg.Name)
 	log.Debugf("chatId ====== %s", *j.msg.ChatId)
-	if !utils.Contains(utils.GetBotCampConf().ChatIDList,*j.msg.ChatId) {
+	if !utils.Contains(utils.GetBotCampConf().ChatIDList, *j.msg.ChatId) {
 		return nil
 	}
 	utils.ExecAndCountFuncCtx(
@@ -87,7 +87,7 @@ func (j *JoinGroupHandler) buildNewGroup() error {
 				Description(fmt.Sprintf("%s的专属群", *user.Name)).
 				UserIdList(memberIDs).
 				ChatMode(`group`).
-				OwnerId(utils.Fish).
+				OwnerId(utils.GetBotCampConf().GroupOwner).
 				ChatType(`private`).
 				External(false).
 				JoinMessageVisibility(`all_members`).

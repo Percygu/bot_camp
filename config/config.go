@@ -31,6 +31,7 @@ type BotConf struct {
 	BotEncryptedKey string   `yaml:"bot_encrypted_key" mapstructure:"bot_encrypted_key"`
 	BotVerifyToken  string   `yaml:"bot_verify_token" mapstructure:"bot_verify_token"`
 	EventUrl        string   `yaml:"event_url" mapstructure:"event_url"`
+	GroupOwner      string   `yaml:"1v1_group_owner" mapstructure:"1v1_group_owner"`
 }
 
 // GetGlobalConf 获取全局配置文件
