@@ -24,7 +24,7 @@ bot_svr_conf:
     port: 3389
     app_id: "cli_a4880a71a638d00e"
     app_secret: "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX"
-    chat_id_list: "oc_a054cf305b885f62b3fb76ba3fecbef0"   # 拉入后需要1v1建群的群id
+    chat_id_list:    # 拉入后需要1v1建群的群id
       - "oc_55c292dc1b798b0d7289c29ddc89d6cc"
       - "oc_2d9be16a28271de445d5d80a9b5e60b8"
     white_list:
