@@ -8,23 +8,25 @@ log_conf:
   pid_path: ./logsvr.pid
 
 bot_svr_conf:
-  bot_camp1:
-    port: 8000
+  camp1:
+    port: 8080
     app_id: "cli_a31ac04fbef8900b"
     app_secret: "83BUHQBSPLm136PftJXhcBBrPUGyqv1I"
     chat_id_list:
       - "oc_757c35079993acdb60fc7e668f99050b"   # 拉入后需要1v1建群的群id
     white_list:
-      - "ou_6e75a4323ad0eef42ae349d71203969e" # 狼哥
-      - "ou_bcd4e27aad8d4cda70bb0d0b091e487c" # 虎哥
       - "ou_9a1afb986757fa17ee0d4d6ba2289d72" # 牛哥
       - "ou_844198543d625613bb5f9a5e4f2366c2" # 鹏哥
-      - "ou_17a627f5ea7d28585af59f1649141e8e" # 小林哥
+      - "ou_e81c2e294ce2cbe94c30a074616f29b9" # 小林哥
+      - "ou_8d3fe525a9fc569eeaca6f0f47a61327" # 飞哥
+      - "ou_fefce1059a6eacabdc39c70bce97343b" # 小鱼
+      - "ou_058baaf20ddca0d4d1d77d7a806698c8" # 清风
+      - "ou_4d0176ce41d7535314cc6a9cf07bc30d" # 诸葛青
     1v1_group_owner: "ou_9a1afb986757fa17ee0d4d6ba2289d72"
-    bot_encrypted_key: "yYaeTpNE9LntvFubmILegh4i8JUTsF4A"
-    bot_verify_token: "TsbOh0kxubaQlOMaIDWeAg7rs2Y6d4z8"
-    event_url: "/webhook/bot1/event"
-  bot_camp2:
+    bot_encrypted_key: "NPHlL4eOQV5i8Hn7IHxWsg07J7Ev6LIj"
+    bot_verify_token: "Nu7hthyTijDXvVZyO6uZ2eFBmH2DEBCc"
+    event_url: "/webhook/event"
+  camp2:
     port: 3389
     app_id: "cli_a4880a71a638d00e"
     app_secret: "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX"
@@ -43,7 +45,7 @@ bot_svr_conf:
     bot_encrypted_key: "yYaeTpNE9LntvFubmILegh4i8JUTsF4A"
     bot_verify_token: "TsbOh0kxubaQlOMaIDWeAg7rs2Y6d4z8"
     event_url: "/webhook/bot2/event"
-  bot_camp3:
+  camp3:
     port: 8083
     app_id: "cli_a4814db20279500e"
     app_secret: "VmUim6zWwozzVdBUoA9CbgHucAyxX3Az"

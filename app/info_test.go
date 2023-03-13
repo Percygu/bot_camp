@@ -35,7 +35,7 @@ func TestListChatID(t *testing.T) {
 // TestListChatID 列出机器人在的聊天群
 func TestListChatID1(t *testing.T) {
 
-	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+	larkinfra.InitClient("cli_a31ac04fbef8900b", "83BUHQBSPLm136PftJXhcBBrPUGyqv1I")
 
 	ctx := context.Background()
 	req := larkim.NewListChatReqBuilder().UserIdType("open_id").PageSize(100).Build()
@@ -52,7 +52,7 @@ func TestListChatID1(t *testing.T) {
 }
 
 func TestListOpenIDs(t *testing.T) {
-	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+	larkinfra.InitClient("cli_a4880a71a638d00e", "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
 	for _, m := range larkinfra.FetchAllGroupMembers(context.Background(), "oc_a054cf305b885f62b3fb76ba3fecbef0", utils.OpenIDType) {
 		fmt.Println(larkcore.Prettify(m))
 	}
@@ -76,7 +76,7 @@ func TestPick(t *testing.T) {
 }
 
 func TestCreateGroup(t *testing.T) {
-	larkinfra.InitClient("cli_a4880a71a638d00e","Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+	larkinfra.InitClient("cli_a4880a71a638d00e", "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
 	//larkinfra.CreateGroup(context.Background(), "ou_844198543d625613bb5f9a5e4f2366c2", "测试")
 	userName := "鹏哥"
 	memberIDs := []string{
