@@ -225,11 +225,12 @@ func NewOneVOneGroupPost(userID, userName string) string {
 	}
 	post.buildFirstLine()
 	post.buildPatchFirstLine()
-	post.buildSecondLine()
-	post.buildSpace()
-	post.buildThirdLine()
-	post.build4thLine()
-	post.build5thLine()
+	post.buildRemindLine()
+	//post.buildSecondLine()
+	//post.buildSpace()
+	//post.buildThirdLine()
+	//post.build4thLine()
+	//post.build5thLine()
 	postStr := NewPostStruct("专属群通知", post.lines)
 	tools.Prettier(postStr)
 	return postStr
@@ -254,9 +255,16 @@ func (o *OneVOneGroupPost) buildSpace() {
 	line.WriteText("  ")
 	o.lines = append(o.lines, line)
 }
+
 func (o *OneVOneGroupPost) buildSecondLine() {
 	line := &onePostLine{}
 	line.WriteText("这里有一些你需要注意的事情：")
+	o.lines = append(o.lines, line)
+}
+
+func (o *OneVOneGroupPost) buildRemindLine() {
+	line := &onePostLine{}
+	line.WriteText("稍后会发送基本信息表，请等待填写")
 	o.lines = append(o.lines, line)
 }
 
@@ -324,7 +332,7 @@ func NewKnowledgeSpaceFallbackPost() string {
 func (r *KnowledgeSpaceFallbackPost) callHelp() *onePostLine {
 	line := &onePostLine{}
 	line.WriteText("知识空间尚未创建，请")
-	line.WriteAt(utils.PengGe, "鹏哥")
+	line.WriteAt(utils.GetBotCampConf().KnowledgeSpaceCreatorID, utils.GetBotCampConf().KnowledgeSpaceCreatorName)
 	line.WriteText("协助创建知识空间哦")
 	return line
 }

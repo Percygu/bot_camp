@@ -76,17 +76,26 @@ func TestPick(t *testing.T) {
 }
 
 func TestCreateGroup(t *testing.T) {
-	larkinfra.InitClient("cli_a4880a71a638d00e", "Je8ygYnhXu2y4BlIUCPMbbojRdWtyyaX")
+	larkinfra.InitClient("cli_a31ac04fbef8900b", "83BUHQBSPLm136PftJXhcBBrPUGyqv1I")
 	//larkinfra.CreateGroup(context.Background(), "ou_844198543d625613bb5f9a5e4f2366c2", "测试")
 	userName := "鹏哥"
-	memberIDs := []string{
-		"ou_0f065b034d6ea3a4158f389a4fae3b1e",
-		"ou_697abf63fa74f346b67f68f93b2bc81b",
-		"ou_eb016ce9f4bccdc5bb02413912ce6ff3",
-		"ou_89455588b44f5210f698b36b7c7b6141",
-		"ou_6a11169c46840d664140c8d697e552d2",
-		"ou_af5d943271517308c3c5d0f7f688276f",
-		"ou_acc578572eed6500f8f30dd6da2a6d88",
+	//memberIDs := []string{
+	//	"ou_0f065b034d6ea3a4158f389a4fae3b1e",
+	//	"ou_697abf63fa74f346b67f68f93b2bc81b",
+	//	"ou_eb016ce9f4bccdc5bb02413912ce6ff3",
+	//	"ou_89455588b44f5210f698b36b7c7b6141",
+	//	"ou_6a11169c46840d664140c8d697e552d2",
+	//	"ou_af5d943271517308c3c5d0f7f688276f",
+	//	"ou_acc578572eed6500f8f30dd6da2a6d88",
+	//}
+	memberIDs1 := []string{
+		"ou_9a1afb986757fa17ee0d4d6ba2289d72",
+		"ou_844198543d625613bb5f9a5e4f2366c2",
+		"ou_e81c2e294ce2cbe94c30a074616f29b9",
+		"ou_8d3fe525a9fc569eeaca6f0f47a61327",
+		"ou_fefce1059a6eacabdc39c70bce97343b",
+		"ou_058baaf20ddca0d4d1d77d7a806698c8",
+		"ou_4d0176ce41d7535314cc6a9cf07bc30d",
 	}
 	req := larkim.NewCreateChatReqBuilder().
 		UserIdType(`open_id`).
@@ -94,7 +103,7 @@ func TestCreateGroup(t *testing.T) {
 		Body(larkim.NewCreateChatReqBodyBuilder().
 			Name(fmt.Sprintf("%s 1v1", userName)).
 			Description(fmt.Sprintf("%s的专属群", userName)).
-			UserIdList(memberIDs).
+			UserIdList(memberIDs1).
 			ChatMode(`group`).
 			OwnerId(utils.PengGe).
 			ChatType(`private`).

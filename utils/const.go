@@ -10,7 +10,7 @@ const (
 	// 测试用
 	Fish    = "ou_88d59ec35b63b8c9212702b0804886c0"
 	FishUID = "5efg94ff"
-	PengGe  = "ou_1b73b5f130001a43c22387149a71dcc4"
+	PengGe  = "ou_844198543d625613bb5f9a5e4f2366c2"
 	All     = "all"
 )
 

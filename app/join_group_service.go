@@ -73,7 +73,7 @@ func (j *JoinGroupHandler) sayHello() error {
 
 // buildNewGroup 为消息内用户创建1v1群聊，发送欢迎语
 func (j *JoinGroupHandler) buildNewGroup() error {
-	logrus.Infof("Build Group")
+	logrus.Infof("Build Group,")
 	for _, user := range j.msg.Users {
 		// 创建1v1群
 		memberIDs := utils.GetBotCampConf().WhiteList

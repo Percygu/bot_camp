@@ -23,6 +23,8 @@ bot_svr_conf:
       - "ou_058baaf20ddca0d4d1d77d7a806698c8" # 清风
       - "ou_4d0176ce41d7535314cc6a9cf07bc30d" # 诸葛青
     1v1_group_owner: "ou_9a1afb986757fa17ee0d4d6ba2289d72"
+    knowledge_space_creator_id: "ou_4d0176ce41d7535314cc6a9cf07bc30d"
+    knowledge_space_creator_name: "诸葛青"
     bot_encrypted_key: "NPHlL4eOQV5i8Hn7IHxWsg07J7Ev6LIj"
     bot_verify_token: "Nu7hthyTijDXvVZyO6uZ2eFBmH2DEBCc"
     event_url: "/webhook/event"
@@ -42,6 +44,8 @@ bot_svr_conf:
       - "ou_7fc9aaa5f4c537d1a1b4be5452ec884f" # 飞哥
       - "ou_51b1387a9ffe74e66ad95c26e780db9e" # 清风
     1v1_group_owner: "ou_88d59ec35b63b8c9212702b0804886c0"
+    knowledge_space_creator_id: "ou_a54b496fc6bdd3c473c0b0a56131baa0"
+    knowledge_space_creator_name: "诸葛青"
     bot_encrypted_key: "yYaeTpNE9LntvFubmILegh4i8JUTsF4A"
     bot_verify_token: "TsbOh0kxubaQlOMaIDWeAg7rs2Y6d4z8"
     event_url: "/webhook/bot2/event"
@@ -60,6 +64,8 @@ bot_svr_conf:
       - "ou_af5d943271517308c3c5d0f7f688276f" # 飞哥
       - "ou_acc578572eed6500f8f30dd6da2a6d88" # 清风
     1v1_group_owner: "ou_0f065b034d6ea3a4158f389a4fae3b1e"
+    knowledge_space_creator_id: "ou_6a11169c46840d664140c8d697e552d2"
+    knowledge_space_creator_name: "诸葛青"
     bot_encrypted_key: "TF2BNJfnE95dhCoP91Pqiex0XHCZZw1L"
     bot_verify_token: "46o4up8P4kRX5WzyRuYe3cLvkIHJux4x"
     event_url: "/webhook/bot3/event"
